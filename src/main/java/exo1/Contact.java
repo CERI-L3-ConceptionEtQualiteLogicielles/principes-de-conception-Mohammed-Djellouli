@@ -21,7 +21,7 @@ public class Contact  {
     }
 
     public String getInfoContact() {
-        return "Nom: " + getNom() + ", Numéro: " + getNumero();
+        return this.toString();
     }
 
 
