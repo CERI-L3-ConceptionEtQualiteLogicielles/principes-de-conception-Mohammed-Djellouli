@@ -3,17 +3,17 @@ package exo1;
 import java.awt.*;
 
 public class SendPhotoAdapter implements SendService{
-    private ServiceEnvoiPhoto serviceEnvoiPhoto;
+    private SendPhoto sendPhoto;
     private Image image;
 
-    public void sendPhotoAdapter(ServiceEnvoiPhoto serviceEnvoiPhoto,Image image) {
-        this.serviceEnvoiPhoto = serviceEnvoiPhoto;
+    public void sendPhotoAdapter(SendPhoto sendPhoto, Image image) {
+        this.sendPhoto = sendPhoto;
         this.image = image;
     }
 
     @Override
     public void send(Contact contact, String message) {
-        serviceEnvoiPhoto.envoiPhoto(contact,image);
+        sendPhoto.envoiPhoto(contact,image);
 
     }
 }

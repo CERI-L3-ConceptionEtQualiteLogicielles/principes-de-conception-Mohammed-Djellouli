@@ -4,7 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestionContact implements ContactService {
-    final private static List<Contact> lesContacts = new ArrayList<>();
+    private static GestionContact instance;  // Unique instance
+    private static List<Contact> lesContacts;
+
+    private GestionContact() {
+        this.lesContacts = new ArrayList<>();
+    }
+
+    public static GestionContact getInstance() {
+        if (instance == null) {
+            instance = new GestionContact();
+        }
+        return instance;
+    }
 
 
     public void ajouteContact(Contact contact) {
